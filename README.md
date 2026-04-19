@@ -202,3 +202,41 @@ parallel_corpus/
 Each file contains aligned multilingual paragraph segments suitable for NLP training, corpus linguistics, or translation research.
 
 ---
+
+## Results
+
+The pipeline was evaluated on three voting dates (12.06.1977, 01.12.1985, 11.03.2007).
+
+### Corpus Statistics
+
+| Year  | DE Tokens | FR Tokens | IT Tokens | RM Tokens | Paragraphs |
+|-------|-----------|-----------|-----------|-----------|------------|
+| 1977  | 4,016     | 4,997     | 4,492     | –         | 209        |
+| 1985  | 1,621     | 2,199     | 1,827     | 2,042     | 107        |
+| 2007  | 2,017     | 2,612     | 2,431     | 2,785     | 179        |
+| **Total** | **7,654** | **9,808** | **8,750** | **4,827** | **495** |
+
+### OCR Quality (Gemini 2.5 Flash Lite)
+
+| Year | DE WER | FR WER | IT WER | RM WER |
+|------|--------|--------|--------|--------|
+| 1977 | 0.046  | 0.045  | 0.032  | –      |
+| 1985 | 0.012  | 0.018  | 0.016  | 0.017  |
+| 2007 | 0.035  | 0.072  | 0.039  | 0.057  |
+
+### Alignment Quality (Sentence SwissBERT)
+
+German (`de`) served as the grounding language; all other languages were aligned against it.
+
+| Year | Lang | F1     | CER    |
+|------|------|--------|--------|
+| 1977 | FR   | 0.921  | 0.076  |
+| 1977 | IT   | 0.919  | 0.068  |
+| 1985 | FR   | 0.953  | 0.021  |
+| 1985 | IT   | 1.000  | 0.000  |
+| 1985 | RM   | 0.981  | 0.080  |
+| 2007 | FR   | 0.981  | 0.010  |
+| 2007 | IT   | 0.986  | 0.004  |
+| 2007 | RM   | 0.953  | 0.027  |
+
+
